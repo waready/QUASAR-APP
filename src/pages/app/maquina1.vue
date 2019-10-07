@@ -115,21 +115,89 @@
   </q-list>
 </div>
   <template>
-  <div class="q-pa-md">
-    <q-infinite-scroll @load="onLoad" reverse>
-      <template slot="loading">
-        <div class="row justify-center q-my-md">
-          <q-spinner color="primary" name="dots" size="40px" />
-        </div>
-      </template>
+  <div class="q-px-lg q-pb-md">
+    <q-timeline :layout="layout" color="secondary">
+      <q-timeline-entry heading>
+        Timeline heading
+        <br>
+        ({{$q.screen.lt.sm ? 'Dense' : ($q.screen.lt.md ? 'Comfortable' : 'Loose')}} layout)
+      </q-timeline-entry>
 
-      <div v-for="(item, index) in items" :key="index" class="caption q-py-sm">
-        <q-badge class="shadow-1">
-          {{ items.length - index }}
-        </q-badge>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
-      </div>
-    </q-infinite-scroll>
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        side="left"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 21, 1986"
+        side="right"
+        icon="delete"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry heading>November, 2019</q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        side="left"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        side="right"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        side="left"
+        color="orange"
+        icon="done_all"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        side="right"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        side="left"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+    </q-timeline>
   </div>
 </template>
 
@@ -146,13 +214,18 @@ export default {
     }
   },
     methods: {
-    onLoad (index, done) {
-      // setTimeout(() => {
-      //   if (this.items) {
-      //     this.items.splice(0, 0, {}, {}, {}, {}, {}, {}, {})
-      //     done()
-      //   }
-      // }, 2000)
+    // onLoad (index, done) {
+    //   setTimeout(() => {
+    //     if (this.items) {
+    //       this.items.splice(0, 0, {}, {}, {}, {}, {}, {}, {})
+    //       done()
+    //     }
+    //   }, 2000)
+    // }
+  },
+   computed: {
+    layout () {
+      return this.$q.screen.lt.sm ? 'dense' : (this.$q.screen.lt.md ? 'comfortable' : 'loose')
     }
   }
 }

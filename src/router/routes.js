@@ -39,7 +39,7 @@ const routes = [
       // {path: id_3, name: 'main', component: () => import('pages/app/Index.vue'), meta:{ requiresAuth: true }},
       // {path: id_4, name: 'main', component: () => import('pages/app/Index.vue'), meta:{ requiresAuth: true }}
       
-      {path: 'mlwe2ia0x5rlmtsp', name: 'main', component: () => import('pages/app/maquina1.vue')},
+      {path: 'mlwe2ia0x5rlmtsp', name: 'main', component: () => import('pages/app/maquina1.vue'), meta:{ requiresAuth: true }},
       {path: 'h6im6ea3o63t0p4l', name: 'main', component: () => import('pages/app/maquina2.vue')},
       {path: 'w5p9ljgjrlgck1tv', name: 'main', component: () => import('pages/app/maquina3.vue')},
       {path: 'dm4x4vojx7uy9h2n', name: 'main', component: () => import('pages/app/maquina4.vue')}
